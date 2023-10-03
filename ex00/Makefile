@@ -19,6 +19,7 @@ INC_DIR = ./
 OBJ_DIR = build/
 
 SRC_FILES = main.cpp \
+			Fixed.cpp
 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 
