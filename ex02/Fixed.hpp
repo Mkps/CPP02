@@ -26,18 +26,39 @@ class Fixed
 		~Fixed();
 
 		Fixed&	operator=(const Fixed &src);
-		bool	operator >( Fixed const & right) const;
-		bool	operator <( Fixed const & right) const;
-		bool	operator >=( Fixed const & right) const;
-		bool	operator <=( Fixed const & right) const;
-		bool	operator ==( Fixed const & right) const;
-		bool	operator !=( Fixed const & right) const;
+		//Comparison operators
+		bool	operator >(Fixed const & right) const;
+		bool	operator <(Fixed const & right) const;
+		bool	operator >=(Fixed const & right) const;
+		bool	operator <=(Fixed const & right) const;
+		bool	operator ==(Fixed const & right) const;
+		bool	operator !=(Fixed const & right) const;
 
-		int     getRawBits(void) const;
-		void    setRawBits(int const raw);
+		// Arithmetic Operators
+		Fixed operator +(Fixed const & rhs) const;
+		Fixed operator -(Fixed const & rhs) const;
+		Fixed operator *(Fixed const & rhs) const;
+		Fixed operator /(Fixed const & rhs) const;
 
+		// Increment Operators
+		Fixed & operator++ (void);
+		Fixed operator ++(int);
+		Fixed & operator-- (void);
+		Fixed operator --(int);
+
+		// Output member functions
 		int		toInt(void) const;
 		float	toFloat(void) const;
+
+		// Comparison member functions
+		static Fixed & min(Fixed & a, Fixed & b);
+		static Fixed & max(Fixed & a, Fixed & b);
+		static const Fixed & min(const Fixed & a, const Fixed & b);
+		static const Fixed & max(const Fixed & a, const Fixed & b);
+
+		// Getter/Setter
+		int     getRawBits(void) const;
+		void    setRawBits(int const raw);
 
 	private:
 		int                 _fixedPointValue;
