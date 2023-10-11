@@ -22,7 +22,7 @@ float	getArea(Point const a, Point const b, Point const c)
 	return ft_fabs(((a1 + b1 + c1) / 2.0f));
 }
 
-bool bsp( Point const a, Point const b, Point const c, Point const point)
+bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	float	area_t, area_bc, area_ac, area_ab;
 
@@ -30,6 +30,8 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	area_bc = getArea(point, b, c);
 	area_ac = getArea(a, point, c);
 	area_ab = getArea(a, b, point);
-
+	
+	if (area_bc == 0 || area_ac == 0 || area_ab == 0)
+		return (false);
 	return (area_t == (area_bc + area_ac + area_ab));
 }
