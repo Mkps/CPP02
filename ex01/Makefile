@@ -27,7 +27,7 @@ OBJ_FILES = $(SRC_FILES:.cpp=.o)
 
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-CC = c++
+CC = c++ 
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
 
