@@ -37,83 +37,83 @@ Fixed::~Fixed()
 }
 
 //	Operators
-Fixed &Fixed::operator =(const Fixed &src)
+Fixed &Fixed::operator =(const Fixed &rhs)
 {
-    this->_fixedPointValue = src.getRawBits();
+    this->_fixedPointValue = rhs.getRawBits();
     return *this;
 }
 
-std::ostream &operator <<(std::ostream& os, const Fixed& src)
+std::ostream &operator <<(std::ostream& os, const Fixed& rhs)
 {
-    os << src.toFloat(); 
+    os << rhs.toFloat(); 
     return (os);
 }
 
 ///		Comparison Operators
-bool	Fixed::operator >( Fixed const & right) const
+bool	Fixed::operator >(Fixed const & rhs) const
 {
-	if (this->getRawBits() > right.getRawBits())
+	if (this->getRawBits() > rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
-bool	Fixed::operator <( Fixed const & right) const
+bool	Fixed::operator <(Fixed const & rhs) const
 {
-	if (this->getRawBits() < right.getRawBits())
+	if (this->getRawBits() < rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
-bool	Fixed::operator >=( Fixed const & right) const
+bool	Fixed::operator >=(Fixed const & rhs) const
 {
-	if (this->getRawBits() >= right.getRawBits())
+	if (this->getRawBits() >= rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
-bool	Fixed::operator <=( Fixed const & right) const
+bool	Fixed::operator <=(Fixed const & rhs) const
 {
-	if (this->getRawBits() <= right.getRawBits())
+	if (this->getRawBits() <= rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
-bool	Fixed::operator ==( Fixed const & right) const
+bool	Fixed::operator ==(Fixed const & rhs) const
 {
-	if (this->getRawBits() == right.getRawBits())
+	if (this->getRawBits() == rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
-bool	Fixed::operator !=( Fixed const & right) const
+bool	Fixed::operator !=(Fixed const & rhs) const
 {
-	if (this->getRawBits() != right.getRawBits())
+	if (this->getRawBits() != rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
 ///		Arithmetic Operators
-Fixed	Fixed::operator +(Fixed const & b) const
+Fixed	Fixed::operator +(Fixed const & rhs) const
 {
-	Fixed	ret(this->toFloat() + b.toFloat());
+	Fixed	ret(this->toFloat() + rhs.toFloat());
 	return (ret);
 }
 
-Fixed	Fixed::operator -(Fixed const & b) const
+Fixed	Fixed::operator -(Fixed const & rhs) const
 {
-	Fixed	ret(this->toFloat() - b.toFloat());
+	Fixed	ret(this->toFloat() - rhs.toFloat());
 	return (ret);
 }
 
-Fixed	Fixed::operator *(Fixed const & b) const
+Fixed	Fixed::operator *(Fixed const & rhs) const
 {
-	Fixed	ret(this->toFloat() * b.toFloat());
+	Fixed	ret(this->toFloat() * rhs.toFloat());
 	return (ret);
 }
 
-Fixed	Fixed::operator /(Fixed const & b) const
+Fixed	Fixed::operator /(Fixed const & rhs) const
 {
-	Fixed	ret(this->toFloat() / b.toFloat());
+	Fixed	ret(this->toFloat() / rhs.toFloat());
 	return (ret);
 }
 
@@ -132,14 +132,14 @@ Fixed Fixed::operator ++(int)
 	return (temp);
 }
 
-Fixed & Fixed::operator--(void)
+Fixed & Fixed::operator-- (void)
 {
 	this->_fixedPointValue -= 1;
 	return (*this);
 }
 
 
-Fixed Fixed::operator--(int)
+Fixed Fixed::operator --(int)
 {
 	Fixed	temp = *this;
 

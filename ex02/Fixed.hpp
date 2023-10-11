@@ -22,17 +22,17 @@ class Fixed
 		Fixed();
 		Fixed(int value);
 		Fixed(float value);
-		Fixed(const Fixed &src);
+		Fixed(const Fixed & src);
 		~Fixed();
 
-		Fixed&	operator=(const Fixed &src);
+		Fixed&	operator=(const Fixed & rhs);
 		//Comparison operators
-		bool	operator >(Fixed const & right) const;
-		bool	operator <(Fixed const & right) const;
-		bool	operator >=(Fixed const & right) const;
-		bool	operator <=(Fixed const & right) const;
-		bool	operator ==(Fixed const & right) const;
-		bool	operator !=(Fixed const & right) const;
+		bool	operator >(Fixed const & rhs) const;
+		bool	operator <(Fixed const & rhs) const;
+		bool	operator >=(Fixed const & rhs) const;
+		bool	operator <=(Fixed const & rhs) const;
+		bool	operator ==(Fixed const & rhs) const;
+		bool	operator !=(Fixed const & rhs) const;
 
 		// Arithmetic Operators
 		Fixed operator +(Fixed const & rhs) const;
@@ -65,5 +65,5 @@ class Fixed
 		static const int    _fractionalBits = 8;
 };
 
-std::ostream& operator<<(std::ostream &os, const Fixed &src);
+std::ostream& operator<<(std::ostream &os, const Fixed & rhs);
 #endif
