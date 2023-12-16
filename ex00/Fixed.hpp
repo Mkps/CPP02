@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aloubier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aloubier <aloubier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 16:19:50 by aloubier          #+#    #+#             */
-/*   Updated: 2023/10/02 16:20:28 by aloubier         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:46:30 by aloubier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
 
-#include <iostream>
+# include <iostream>
 
 class Fixed
 {
