@@ -6,7 +6,7 @@
 /*   By: aloubier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:03:57 by aloubier          #+#    #+#             */
-/*   Updated: 2023/10/10 14:59:28 by aloubier         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:13:23 by aloubier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,19 @@ void    Fixed::setRawBits(int const raw)
 {
     this->_fixedPointValue = raw;
 }
-
+#include <bitset>
 //	Member functions
 float   Fixed::toFloat(void) const
 {
+    float a = (1 << this->_fractionalBits);
+    std::bitset<32> x(a);
+    std::cout << "1 << fb : " << x << std::endl;
+    float b = (this->_fixedPointValue);
+    std::bitset<32> y(b);
+    std::cout << "fpv : " << y << std::endl;
+    float c = ((float)this->_fixedPointValue / (1 << this->_fractionalBits));
+    std::bitset<32> z(c);
+    std::cout << "result: " << z << std::endl;
 	return ((float)this->_fixedPointValue / (1 << this->_fractionalBits));
 }
 
