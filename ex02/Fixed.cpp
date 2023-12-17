@@ -6,7 +6,7 @@
 /*   By: aloubier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:03:57 by aloubier          #+#    #+#             */
-/*   Updated: 2023/10/10 14:59:28 by aloubier         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:56:57 by aloubier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ Fixed Fixed::operator --(int)
 {
 	Fixed	temp = *this;
 
-	this->_fixedPointValue += 1 ;
+	this->_fixedPointValue -= 1 ;
 	return (temp);
 }
 
